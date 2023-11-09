@@ -15,12 +15,16 @@ class Estudiante {
     string nombre;
     int edad;
     string grado;
+    std::vector<std::string> materias;
 public:
     Estudiante(string nombre, int edad, string grado);
     string getNombre();
     int getEdad();
     string getGrado();
     void mostrar_info();
+    // 5 Registro de materias
+    void registrar_Materia(string materia);
+    void mostrar_Materias();
 };
 
 

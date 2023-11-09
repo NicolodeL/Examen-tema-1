@@ -39,10 +39,16 @@ int main() {
     cout << "Despues del intercambio: c = " << c << ", d = " << d << endl;
     // 4 Manejo de excepciones
     try {
-        std::cout << "Resultado: " << dividir(10, 0) << std::endl;
+        std::cout << "Resultado: \n" << dividir(10, 0) << std::endl;
     } catch (const std::invalid_argument& e) {
         std::cerr << "Se ha producido un error: " << e.what() << std::endl;
     }
-    
+
+    // 5 Registro de materias
+    estudiante1.registrar_Materia("Matematicas");
+    estudiante1.registrar_Materia("Fisica");
+    estudiante1.mostrar_Materias();
+
+
 }
 

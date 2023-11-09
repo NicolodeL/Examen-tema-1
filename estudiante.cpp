@@ -19,3 +19,14 @@ void Estudiante::mostrar_info() {
     cout << "Edad: " << edad << endl;
     cout << "Grado: " << grado << endl;
 }
+
+// 5 Registro de materias
+void Estudiante::registrar_Materia(string materia) {
+    materias.push_back(materia);
+}
+void Estudiante::mostrar_Materias() {
+    cout << "Materias del estudiante:" << endl;
+    for (int i = 0; i < materias.size(); ++i) {
+        cout << materias[i] << endl;
+    }
+}
