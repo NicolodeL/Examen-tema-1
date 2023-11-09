@@ -27,12 +27,18 @@ public:
     void mostrar_Materias();
 };
 
-
-
-
-
-
-
-
-
+// 7 Manejo de Ausencias
+class RegistroAsistencia {
+            public:
+            enum Estado {
+                ASISTIO,
+                FALTO,
+                TARDO
+            };
+            RegistroAsistencia(const std::string& fecha, Estado estado);
+            void mostrar_asistencia() const;
+            private:
+            std::string fecha;
+            Estado estado;
+    };
 #endif //EXAMEN_TEMA_1_ESTUDIANTE_H

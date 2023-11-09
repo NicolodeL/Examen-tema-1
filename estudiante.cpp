@@ -30,3 +30,23 @@ void Estudiante::mostrar_Materias() {
         cout << materias[i] << endl;
     }
 }
+
+// 7 Manejo de Ausencias
+RegistroAsistencia::RegistroAsistencia(const std::string& fecha, Estado estado)
+        : fecha(fecha), estado(estado) {}
+
+void RegistroAsistencia::mostrar_asistencia() const {
+    std::cout << "Fecha: " << fecha << ", Estado: ";
+    switch (estado) {
+        case ASISTIO:
+            std::cout << "Asistio";
+            break;
+        case FALTO:
+            std::cout << "Falto";
+            break;
+        case TARDO:
+            std::cout << "Tardo";
+            break;
+    }
+    std::cout << std::endl;
+}

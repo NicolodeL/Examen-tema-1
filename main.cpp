@@ -69,5 +69,8 @@ int main() {
     double promedio = calcularPromedio(calificaciones);
     cout << "El promedio del estudiante es: " << promedio << endl;
 
+    // 7 Manejo de Ausencias
+    RegistroAsistencia dia1("2022-01-01", RegistroAsistencia::ASISTIO );
+    dia1.mostrar_asistencia();
 }
 
