@@ -9,9 +9,6 @@ int suma(int a, int b) {
     return a + b;
 }
 
-
-
-
 int main() {
     // 1 Operaciones básicas
     cout << suma(6, 5) << endl;
