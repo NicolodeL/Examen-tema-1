@@ -14,13 +14,13 @@ using namespace std;
 class Estudiante {
     string nombre;
     int edad;
-    string grado;
+    int grado;
     std::vector<std::string> materias;
 public:
-    Estudiante(string nombre, int edad, string grado);
+    Estudiante(string nombre, int edad, int grado);
     string getNombre();
     int getEdad();
-    string getGrado();
+    int getGrado();
     void mostrar_info();
     // 5 Registro de materias
     void registrar_Materia(string materia);
@@ -41,4 +41,9 @@ class RegistroAsistencia {
             std::string fecha;
             Estado estado;
     };
+
+class MateriaYaRegistradaException : public std::runtime_error {
+public:
+    MateriaYaRegistradaException() : std::runtime_error("La materia ya está registrada") {}
+};
 #endif //EXAMEN_TEMA_1_ESTUDIANTE_H

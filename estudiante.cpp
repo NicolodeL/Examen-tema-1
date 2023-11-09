@@ -1,6 +1,6 @@
 #include "estudiante.h"
 // 2 Gestión de estudiantes
-Estudiante::Estudiante(string nombre, int edad, string grado) {
+Estudiante::Estudiante(string nombre, int edad, int grado) {
     this->nombre = nombre;
     this->edad = edad;
     this->grado = grado;
@@ -11,7 +11,7 @@ string Estudiante::getNombre() {
 int Estudiante::getEdad() {
     return edad;
 }
-string Estudiante::getGrado() {
+int Estudiante::getGrado() {
     return grado;
 }
 void Estudiante::mostrar_info() {
@@ -21,7 +21,11 @@ void Estudiante::mostrar_info() {
 }
 
 // 5 Registro de materias
-void Estudiante::registrar_Materia(string materia) {
+void Estudiante::registrar_Materia(string materia) { for (const std::string& m : materias) {
+        if (m == materia) {
+            throw MateriaYaRegistradaException();
+        }
+    }
     materias.push_back(materia);
 }
 void Estudiante::mostrar_Materias() {
@@ -50,3 +54,5 @@ void RegistroAsistencia::mostrar_asistencia() const {
     }
     std::cout << std::endl;
 }
+
+

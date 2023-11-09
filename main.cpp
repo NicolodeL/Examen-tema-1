@@ -38,12 +38,15 @@ double calcularPromedio(const std::vector<int>& calificaciones) {
     return static_cast<double>(suma) / calificaciones.size();
 }
 
+// 8 Filtrado de Estudiantes  por Grado
+
+
 int main() {
     // 1 Operaciones básicas
     cout << suma(6, 5) << endl;
 
     // 2 Gestión de estudiantes
-    Estudiante estudiante1("Juan", 12, "2");
+    Estudiante estudiante1("Juan", 12, 2);
     estudiante1.mostrar_info();
 
     // 3 Optimización de Memoria
@@ -72,5 +75,12 @@ int main() {
     // 7 Manejo de Ausencias
     RegistroAsistencia dia1("2022-01-01", RegistroAsistencia::ASISTIO );
     dia1.mostrar_asistencia();
+
+    // 9 Gestion de expciones personalizadas
+    try {
+        estudiante1.registrar_Materia("Matematicas");
+    } catch (const MateriaYaRegistradaException& e) {
+        std::cerr << "Se ha producido un error: " << e.what() << std::endl;
+    }
 }
 
