@@ -15,6 +15,13 @@ void intercambiar(char &c, char &d){
     c = d;
     d = temp;
     }
+// 4 Manejo de excepciones
+double dividir(double numerador, double denominador) {
+    if (denominador == 0) {
+        throw std::invalid_argument("El denominador no puede ser cero");
+    }
+    return numerador / denominador;
+}
 
 int main() {
     // 1 Operaciones básicas
@@ -30,5 +37,12 @@ int main() {
     printf("Antes del intercambio c = %c y d = %c \n" , c, d);
     intercambiar(c, d);
     cout << "Despues del intercambio: c = " << c << ", d = " << d << endl;
+    // 4 Manejo de excepciones
+    try {
+        std::cout << "Resultado: " << dividir(10, 0) << std::endl;
+    } catch (const std::invalid_argument& e) {
+        std::cerr << "Se ha producido un error: " << e.what() << std::endl;
+    }
+    
 }
 
