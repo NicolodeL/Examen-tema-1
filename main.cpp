@@ -9,18 +9,33 @@ using namespace std;
 int suma(int a, int b) {
     return a + b;
 }
+
 // 3 Optimización de Memoria
 void intercambiar(char &c, char &d){
     char temp = c;
     c = d;
     d = temp;
-    }
+}
+
 // 4 Manejo de excepciones
 double dividir(double numerador, double denominador) {
     if (denominador == 0) {
         throw std::invalid_argument("El denominador no puede ser cero");
     }
     return numerador / denominador;
+}
+
+// 6 Promedio del Estudiante
+double calcularPromedio(const std::vector<int>& calificaciones) {
+    if (calificaciones.empty()) {
+        return 0.0; // Devolvemos 0 si el vector está vacío para evitar divisiones por cero.
+    }
+
+    int suma = 0;
+    for (int calificion : calificaciones) {
+        suma += calificion;
+    }
+    return static_cast<double>(suma) / calificaciones.size();
 }
 
 int main() {
@@ -49,6 +64,10 @@ int main() {
     estudiante1.registrar_Materia("Fisica");
     estudiante1.mostrar_Materias();
 
+    //6 Promedio del Estudiante
+    vector<int> calificaciones = {10, 9, 7, 8, 6};
+    double promedio = calcularPromedio(calificaciones);
+    cout << "El promedio del estudiante es: " << promedio << endl;
 
 }
 
