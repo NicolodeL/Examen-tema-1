@@ -82,5 +82,10 @@ int main() {
     } catch (const MateriaYaRegistradaException& e) {
         std::cerr << "Se ha producido un error: " << e.what() << std::endl;
     }
+
+    //10 registro profesores
+    profesor profesor1("Pedro", 45, "Matematicas", 20);
+    profesor1.mostrar();
+
 }
 

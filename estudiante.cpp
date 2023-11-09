@@ -55,4 +55,30 @@ void RegistroAsistencia::mostrar_asistencia() const {
     std::cout << std::endl;
 }
 
+// 10 registro profesores
+profesor::profesor(string nombre, int edad, string materia, int experiencia) {
+    this->nombre = nombre;
+    this->edad = edad;
+    this->materia = materia;
+    this->experiencia = experiencia;
+};
+
+string profesor::getNombre() {
+    return nombre;
+}
+int profesor::getEdad() {
+    return edad;
+}
+string profesor::getMateria() {
+    return materia;
+}
+int profesor::getexperiencia() {
+    return experiencia;
+}
+void profesor::mostrar() {
+    cout << "Nombre: " << nombre << endl;
+    cout << "Edad: " << edad << endl;
+    cout << "Materia: " << materia << endl;
+    cout << "Experiencia: " << experiencia << endl;
+};
 

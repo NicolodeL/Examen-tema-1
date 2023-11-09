@@ -46,4 +46,21 @@ class MateriaYaRegistradaException : public std::runtime_error {
 public:
     MateriaYaRegistradaException() : std::runtime_error("La materia ya está registrada") {}
 };
+
+//10 registro profesores
+class profesor {
+    string nombre;
+    int edad;
+    string materia;
+    int experiencia;
+
+public:
+    profesor(string nombre, int edad, string materia, int experiencia);
+    string getNombre();
+    int getEdad();
+    string getMateria();
+    int getexperiencia();
+    void mostrar();
+
+};
 #endif //EXAMEN_TEMA_1_ESTUDIANTE_H
